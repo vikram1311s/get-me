@@ -8,7 +8,8 @@ app.use(cors());
 app.use(express.json()); // for parsing application/json
 app.use(express.static('public')); // Serve static files
 
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+
 const dataFilePath = path.join(__dirname, 'data.json');
 
 app.post('/store-data', async (req, res) => {
